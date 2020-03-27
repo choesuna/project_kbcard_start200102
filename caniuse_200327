@@ -1,3 +1,10 @@
+# target-densitydpi : only for Android browser
+- device-dpi : Use the device's native dpi as target dpi. force the browser to make a CSS pixel the same size as a device pixel, which may cause content to appear incorrectly scaled on screen.
+- low-dpi : 120dpi
+- medium-dpi : 160dpi 
+- high-dpi : 240dpi
+- high-dpi, medium-dpi : may cause content to appear incorrectly scaled on screen.
+
 # inline-block
 - over IE8
 - over IE7 : only Supported in IE6 and IE7 on elements with a display of "inline" by default. ??
@@ -12,6 +19,28 @@ display: inline-block;
 *zoom: 1;
 
 - zoom:1 is to triger hasLayout
+
+# display: table-* properties as well as display: inline-table
+- over IE8
+- table
+- table-cell
+- table-column
+- table-column-group
+- table-footer-group
+- table-header-group
+- table-row
+- table-row-group
+
+# table-layout
+- value : auto|fixed|initial|inherit;
+- auto : default
+- fixed : major benefit is performance.
+The browser dosen't need to anylize the entire table's content before determining the size of the columns; it only needs to analyze the first row.
+contents > width 
+
+
+# position: sticky
+- IE : not supported
 
 # transform 2D
 - over IE9 : prefix -ms-
