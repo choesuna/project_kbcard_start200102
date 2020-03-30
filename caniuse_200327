@@ -5,13 +5,22 @@
 - high-dpi : 240dpi
 - high-dpi, medium-dpi : may cause content to appear incorrectly scaled on screen.
 
+
 # inline-block
 - over IE8
+- only IE8 bug : 
+https://blog.caplin.com/2013/06/07/developing-for-ie8-inline-block-resize-bug/
+
+- hack 
+float:left\9; /* This works for IE8 and below  so apply this to your code*/
+
 - over IE7 : only Supported in IE6 and IE7 on elements with a display of "inline" by default. ??
 - Until IE8, inline-block is only for natural inline-elements.
 In this case, check the doctype and inline-block elements
-IE8 cannot switch elements that are block by default to inline-block elements. No matter how hard you try, they will always remain block unless you use float IIRC.
+IE8 cannot switch elements that are block by default to inline-block elements. No matter how hard you try, they will always remain block unless you use float IIRC,If I Remember Correctly.
 Changing the doctype worked for IE
+- Basically IE has a trigger called "hasLayout". Triggering this will allow you to use display:inline-block on a block level element(by default IE only allows inline-block on native inline elements).
+- IE supports inline-block. but only for elements that are natively inline. 
 
 - hack
 display: inline-block;
@@ -110,6 +119,25 @@ inset : Optional. Changes the shadow from an outer shadow(outset) to an inner sh
 - Browser Support
 Chrome :43.0, 4.0-webkit-
 IE : 01.0
+
+
+
+#:after, :before
+- over IE8
+- IE7
+zoom:1
+
+# border-spacing
+- IE7 : border-collapse:seperate,border-spacing : dosen't work.
+
+# empty-cell:show
+- IE7 : onlyt enpty-cell's attribute is border-collapse:seperate, it isn't work
+- IE8 : onlyt enpty-cell's attribute is border-collapse:seperate, it is work.
+
+# outline
+- over IE8
+
+
 
  
  
