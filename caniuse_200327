@@ -5,14 +5,27 @@
 - high-dpi : 240dpi
 - high-dpi, medium-dpi : may cause content to appear incorrectly scaled on screen.
 
+# Media Queries
+- over IE9
+- Dose not support nested media queries
+- 
+
+# hack
+- star hack : *선택자, *property:value; *div{};- IE7 hack
+
+- \9; property\9; under IE8 hack
+float:left\9; /* This works for IE8 and below  so apply this to your code*/
+
+- \0/IE8+9 :IE8, IE9, property:value\0/IE8+9
+
+- mediaquery hack
+@media all\0{}
+@media \0screen{} : 
 
 # inline-block
 - over IE8
 - only IE8 bug : 
 https://blog.caplin.com/2013/06/07/developing-for-ie8-inline-block-resize-bug/
-
-- hack 
-float:left\9; /* This works for IE8 and below  so apply this to your code*/
 
 - over IE7 : only Supported in IE6 and IE7 on elements with a display of "inline" by default. ??
 - Until IE8, inline-block is only for natural inline-elements.
