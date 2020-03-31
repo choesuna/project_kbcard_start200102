@@ -7,50 +7,81 @@
 # media types
 print, screen... in HTML4
 
-# how to use
-- The value is a comma-separated list of entryes. 
-media="screen, 3d-glasses, print and resolution"
-
-
 # syntax
-- the comma expresses a logical OR, while the 'end'keyword expresses a logical AND.
+- the comma expresses a logical OR, while the 'and' keyword expresses a logical AND.
 <link rel="stylesheet" media="screen and (color)" href="example.css" />
 - the logical NOT can be expressed through the 'not' keyword.
 - The keyword 'only' can also be used to hide style sheets from older user agents. User agents must process media queries starting with 'only' as if the 'only' keyword was not present.
 <link rel="stylesheet" media="only screen and (color)" href="example.css" />
 
-# The media queries syntax can be used with HTML, XHTML, XML and the @import and @media rules of CSS.
+# The media queries syntax can be used with HTML, XHTML, XML and the @import and @media rules of CSS. 
 <link rel="stylesheet" media="screen and (color), projection and (color)" rel="stylesheet" href="example.css">
 <link rel="stylesheet" media="screen and (color), projection and (color)" rel="stylesheet" href="example.css" />
 <?xml-stylesheet media="screen and (color), projection and (color)" rel="stylesheet" href="example.css" ?>
 @import url(example.css) screen and (color), projection and (color);
 @media screen and (color), jection and (color){...}
 
-
 # IE identical syntax
 @media all and (min-width:500px){}
 @media (min-width:500px){}
 
 # Media features
-- width, 
+- width, height, oreintation, aspect-ratio, device-aspect-ratio, color, color-index, monochrome, resolution, scan, grid
 
-# width
+# width 
+- media feature
 - value : <length>
 - applies to : visual and tactile media types
-- Accepts min/max prefixes : yes
-
+- accepts min/max prefixes : yes
 - length  cannot be negative.
-- This media query expresses that the style sheet is usable on devices with viewport (the part of the screen/paper where the document is rendered) widths between 400 and 700 pixels
+- This media query expresses that the style sheet is usable on devices with viewport (the part of the screen/paper where the document is rendered) widths between 400 and 700 pixels :
 @media screen and (min-width:400px) and (max-width:700px) {}
--This media query expresses that style sheet is usuable on screen and handled devices if the width of the viewport is greater thant 20em.
+-This media query expresses that style sheet is usuable on screen and handled devices if the width of the viewport is greater thant 20em :
 @media handled and (min-width:20em), screen and (min-width:20em) {}
 
 # height
+- media feature
 - value : <length>
 - applies to : visual and tactile media types
 - accepts min/max-prefixes : yes
 - for paged media, this is the height of the page box
 - A specified <length> cannot be negative. 
+
+# orientation
+- media feature
+- value : portable | landscape
+- applies to : bitmap media types
+- accepts min/max-prefixes : no
+
+# color
+- value : <integer>
+- applies to : visual media types
+- accept min/max prefiexes : yes
+- The 'color' media feature describes the number of bits per color component of the output device. If the device is not a color device, the value is zero.
+- a specified <integer> cannot be negative.
+- these two media queries express that a style sheet applies to all color devices :
+@media all and (color) {...}
+@media all and (min-color:1) {...}
+
+# scan
+- value : progressive | interlace
+- applies to : 'tv' media types
+- accepts min/max prefixes : no
+- The 'scan' media feature describes the scanning process of 'tv' output devices.
+@media tv and (scan:progressive) {}
+
+
+# values
+- ratio : positive integer, optional whitespace
+- resolution : positive number
+
+# units
+
+# resolution
+- dpi, dots per CSS 'inch'
+- dpcm, dots per CSS 'centimeter'
+
+
 
 
 
@@ -66,3 +97,4 @@ Inside a CSS style sheet
 
 ## reference
 https://www.w3.org/TR/css3-mediaqueries/
+https://aboooks.tistory.com/400
