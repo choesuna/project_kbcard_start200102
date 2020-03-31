@@ -1,1 +1,30 @@
 ## units
+- pt, px, ex, em, rem, %, pica
+- output media : screen or paper
+- absolute units : 1in = 2.54cm = 25.4mm = 72pt = 6pc
+- relative units : em
+- units depend on the font : em, ex 
+
+# recommended units
+- screen : em, px, %
+- print : em, cm, mm, in, pt, pc, %
+
+
+
+# pt, 
+
+# point
+- typographic unit
+- in typography, the point is the smallest unit of measure. 
+- DTP point,DeskTop Publishing point
+- DTP point is defined as 1/72 of an international inch
+
+# pica
+- typographic unit
+- The pica is a typographic unit of measure corresponding to approximately 1/6 of an inch, or from 1/68 to 1/73 of a foot. One pica is further divided into 12 points.
+
+# DPI,Dots per Inch
+
+
+## reference
+https://www.w3.org/Style/Examples/007/units.en.html
