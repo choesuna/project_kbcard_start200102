@@ -31,6 +31,31 @@ media="screen, 3d-glasses, print and resolution"
 @media all and (min-width:500px){}
 @media (min-width:500px){}
 
+# Media features
+- width, 
+
+# width
+- value : <length>
+- applies to : visual and tactile media types
+- Accepts min/max prefixes : yes
+
+- length  cannot be negative.
+- This media query expresses that the style sheet is usable on devices with viewport (the part of the screen/paper where the document is rendered) widths between 400 and 700 pixels
+@media screen and (min-width:400px) and (max-width:700px) {}
+-This media query expresses that style sheet is usuable on screen and handled devices if the width of the viewport is greater thant 20em.
+@media handled and (min-width:20em), screen and (min-width:20em) {}
+
+# height
+- value : <length>
+- applies to : visual and tactile media types
+- accepts min/max-prefixes : yes
+- for paged media, this is the height of the page box
+- A specified <length> cannot be negative. 
+
+
+
+
+
 # background
 <link rel="stylesheet" type="text/css" media="screen" href="sans-serif.css">
 <link rel="stylesheet" type="text/css" media="print" href="serif.css">
