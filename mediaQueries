@@ -1,0 +1,43 @@
+## Media Queries
+
+# support
+- over IE9
+- IE dose not support nested media queries
+
+# media types
+print, screen... in HTML4
+
+# how to use
+- The value is a comma-separated list of entryes. 
+media="screen, 3d-glasses, print and resolution"
+
+
+# syntax
+- the comma expresses a logical OR, while the 'end'keyword expresses a logical AND.
+<link rel="stylesheet" media="screen and (color)" href="example.css" />
+- the logical NOT can be expressed through the 'not' keyword.
+- The keyword 'only' can also be used to hide style sheets from older user agents. User agents must process media queries starting with 'only' as if the 'only' keyword was not present.
+<link rel="stylesheet" media="only screen and (color)" href="example.css" />
+
+# The media queries syntax can be used with HTML, XHTML, XML and the @import and @media rules of CSS.
+<link rel="stylesheet" media="screen and (color), projection and (color)" rel="stylesheet" href="example.css">
+<link rel="stylesheet" media="screen and (color), projection and (color)" rel="stylesheet" href="example.css" />
+<?xml-stylesheet media="screen and (color), projection and (color)" rel="stylesheet" href="example.css" ?>
+@import url(example.css) screen and (color), projection and (color);
+@media screen and (color), jection and (color){...}
+
+
+# IE identical syntax
+@media all and (min-width:500px){}
+@media (min-width:500px){}
+
+# background
+<link rel="stylesheet" type="text/css" media="screen" href="sans-serif.css">
+<link rel="stylesheet" type="text/css" media="print" href="serif.css">
+
+Inside a CSS style sheet
+@media screen{*font-family: sans-serif;}
+
+
+## reference
+https://www.w3.org/TR/css3-mediaqueries/
