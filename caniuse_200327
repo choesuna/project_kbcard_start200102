@@ -6,9 +6,7 @@
 - high-dpi, medium-dpi : may cause content to appear incorrectly scaled on screen.
 
 # Media Queries
-- over IE9
-- Dose not support nested media queries
-- 
+- over IE9 
 
 # hack
 - star hack : *선택자, *property:value; *div{};- IE7 hack
@@ -137,8 +135,11 @@ IE : 01.0
 
 #:after, :before
 - over IE8
-- IE7
-zoom:1
+- IE7 : 안됨 왜??
+*zoom: expression(
+    this.runtimeStyle.zoom ="1",
+    this.insertBefore(document.createElement("div"), this.firstChild).className = "ie7-before"
+);
 
 # border-spacing
 - IE7 : border-collapse:seperate,border-spacing : dosen't work.
