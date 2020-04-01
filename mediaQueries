@@ -1,5 +1,12 @@
 ## Media Queries
 
+0401 add
+- mediaquery hack
+@media all\0{}
+@media \0screen{} :
+
+
+
 # support
 - over IE9
 - IE dose not support nested media queries
