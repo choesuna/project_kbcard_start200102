@@ -11,10 +11,24 @@
 - over IE9
 - IE dose not support nested media queries
 
+# media type, media features
+- 
+- ref. : https://www.w3schools.com/cssref/css3_pr_mediaquery.asp
+
 # media types
 print, screen... in HTML4
+- all : default 
+- print : used for printers
+- screen : used for computer screens, tablets, smart-phone etc.
+- speech : used for screenreaders that "reads" the page out outd
 
 # syntax
+- @media not|only mediatype and (mediafeature and |or|not mediafeature){}
+not: reverts the meaning of an entire media query.
+only: prevents older browsers that do not support media queries with media feature from applying the specified styles. It has no effect on modern browsers.
+and: combines a media feature width a media type or other media features.
+
+
 - the comma expresses a logical OR, while the 'and' keyword expresses a logical AND.
 <link rel="stylesheet" media="screen and (color)" href="example.css" />
 - the logical NOT can be expressed through the 'not' keyword.
@@ -28,12 +42,15 @@ print, screen... in HTML4
 @import url(example.css) screen and (color), projection and (color);
 @media screen and (color), jection and (color){...}
 
+
+
 # IE identical syntax
 @media all and (min-width:500px){}
 @media (min-width:500px){}
 
 # Media features
 - width, height, oreintation, aspect-ratio, device-aspect-ratio, color, color-index, monochrome, resolution, scan, grid
+- media features provide more specific details to media queries, by allowing to test for a specific feature of the user agent or display device.
 
 # width 
 - media feature
@@ -59,6 +76,7 @@ print, screen... in HTML4
 - value : portable | landscape
 - applies to : bitmap media types
 - accepts min/max-prefixes : no
+- You can have a set of CSS properties that will only apply when the browser window is wider than its height, a so called "landscape" orientation: @media only screen and (orientation:landscape){}
 
 # color
 - value : <integer>
@@ -104,4 +122,6 @@ Inside a CSS style sheet
 
 ## reference
 https://www.w3.org/TR/css3-mediaqueries/
+https://www.w3schools.com/cssref/css3_pr_mediaquery.asp
 https://aboooks.tistory.com/400
+https://blog.caplin.com/2013/06/07/developing-for-ie8-inline-block-resize-bug/
