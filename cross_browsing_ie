@@ -7,12 +7,12 @@
 
 
 # attribute hack
--\9, 
+-\9, *
 
 # \9
 - attribute hack
 - IE8 and under hack, IE6, IE7, IE8
-- property\9; 
+- property:value\9; 
 
 
 # @media Rule
@@ -23,26 +23,31 @@
 - only IE8 bug : 
 https://blog.caplin.com/2013/06/07/developing-for-ie8-inline-block-resize-bug/
 
-- Until IE8, inline-block is only for natural inline-elements.
-In this case, check the doctype and inline-block elements 
-<왜 닷타입 확인>
-float:left\9; /* This works for IE8 and below  so apply this to your code*/
-IE8 cannot switch elements that are block by default to inline-block elements. No matter how hard you try, they will always remain block unless you use float IIRC,If I Remember Correctly.
-
-Changing the doctype worked for IE <왜>
-
-- Basically IE has a trigger called "hasLayout". Triggering this will allow you to use display:inline-block on a block level element(by default IE only allows inline-block on native inline elements).
+- IE7 and under, inline-block is only for natural inline-elements.
+- float:left\9;
 - IE supports inline-block. but only for elements that are natively inline. 
-
 - only Supported in IE6 and IE7 on elements with a display of "inline" by default.
-
+- Basically IE has a trigger called "hasLayout". Triggering this will allow you to use display:inline-block on a block level element(by default IE only allows inline-block on native inline elements).
+- *zoom:1 is to triger hasLayout
 
 - hack
 display: inline-block;
 *display: inline;
 *zoom: 1;
 
-- *zoom:1 is to triger hasLayout
+
+
+
+
+
+In this case, check the doctype and inline-block elements 
+<왜 닷타입 확인>
+Changing the doctype worked for IE <왜>
+
+
+
+
+
 
 # display: table-* properties as well as display: inline-table
 - IE8 and over
