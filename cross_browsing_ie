@@ -1,0 +1,154 @@
+# hack
+- star hack : *선택자, *property:value; *div{};- IE7 hack
+
+- \9; property\9; under IE8 hack
+float:left\9; /* This works for IE8 and below  so apply this to your code*/
+
+- \0/IE8+9 :IE8, IE9, property:value\0/IE8+9
+
+# Media Queries
+- over IE9 
+
+- mediaquery hack
+@media all\0{}
+@media \0screen{} : 
+
+# inline-block
+- over IE8
+- only IE8 bug : 
+https://blog.caplin.com/2013/06/07/developing-for-ie8-inline-block-resize-bug/
+
+- only Supported in IE6 and IE7 on elements with a display of "inline" by default.
+- Until IE8, inline-block is only for natural inline-elements.
+In this case, check the doctype and inline-block elements 
+<왜 닷타입 확인>
+
+IE8 cannot switch elements that are block by default to inline-block elements. No matter how hard you try, they will always remain block unless you use float IIRC,If I Remember Correctly.
+
+Changing the doctype worked for IE <왜>
+
+- Basically IE has a trigger called "hasLayout". Triggering this will allow you to use display:inline-block on a block level element(by default IE only allows inline-block on native inline elements).
+- IE supports inline-block. but only for elements that are natively inline. 
+
+- hack
+display: inline-block;
+*display: inline;
+*zoom: 1;
+
+- *zoom:1 is to triger hasLayout
+
+# display: table-* properties as well as display: inline-table
+- over IE8
+- table
+- table-cell
+- table-column
+- table-column-group
+- table-footer-group
+- table-header-group
+- table-row
+- table-row-group
+
+# table-layout
+- value : auto|fixed|initial|inherit;
+- auto : default
+- fixed : major benefit is performance.
+The browser dosen't need to anylize the entire table's content before determining the size of the columns; it only needs to analyze the first row.
+contents > width 
+
+
+# position: sticky
+- IE : not supported
+
+# transform 2D
+- over IE9 : prefix -ms-
+- does not support CSS transforms on SVG elements
+- In IE9 the caret of a textarea disappears when you use translate
+
+# transform 3D
+- even over IE10 : partial support, so dont't use
+
+# background-size
+- over IE9
+
+# animation
+- @keyframes
+- animation-name
+- animation-duration
+- animation-delay
+Negative values are also allowed.
+
+- animation-iteration-count
+- animation-direction
+- animation-timing-function
+ease : default; slow start, then fast, then end slowly
+linear
+ease-in
+ease-out
+ease-in-out
+cubic-bezier(n,n,n,n)
+
+- animation-fill-mode
+- animation
+
+- over IE10
+
+https://www.w3schools.com/css/css3_animations.asp
+
+# box-shadow 
+- over IE9
+- multiple shadows 
+To use box-shadow in IE9 or later, you must set border-collapse to seperate.
+To attach more than one shadow to an element, add a comma-separated list of shadows
+- spread radius 
+To use box-shadow in IE9 or later, you must set border-collapse to seperate.
+- inset
+To use box-shadow in IE9 or later, you must set border-collapse to seperate.
+inset must be the last keyword in the declaration.
+- Syntax
+box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;
+- Property Values
+none : Default value. No shadow is displayed
+h-offset : Required. A positive value puts the shadow on the right side of the box, a negative value puts the shadow on the left side of the box.
+v-offset : Required. A positive value puts the shadow below the box, a negative value puts the shadow above the box.
+blur : Optional. The blur radius.
+spread : Optional. 
+color : Optional. The default value is the text color. 
+In Safari(on PC) the color parameter is required. If you do not specify the color, the shadow is not displayed at all.
+inset : Optional. Changes the shadow from an outer shadow(outset) to an inner shadow.
+
+-chrome delay problem
+
+# KIW 테스트 MOB테스트 상세 계획서
+
+# @keyframes
+- Syntax
+@keyframes animationname {keyframes-selector{css-style;}}
+
+- Browser Support
+Chrome :43.0, 4.0-webkit-
+IE : 01.0
+
+
+
+#:after, :before
+- over IE8
+- IE7 : 안됨 왜??
+*zoom: expression(
+    this.runtimeStyle.zoom ="1",
+    this.insertBefore(document.createElement("div"), this.firstChild).className = "ie7-before"
+);
+
+# border-spacing
+- IE7 : border-collapse:seperate,border-spacing : dosen't work.
+
+# empty-cell:show
+- IE7 : onlyt enpty-cell's attribute is border-collapse:seperate, it isn't work
+- IE8 : onlyt enpty-cell's attribute is border-collapse:seperate, it is work.
+
+# outline
+- over IE8
+
+
+
+ 
+ 
