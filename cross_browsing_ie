@@ -35,6 +35,22 @@ display: inline-block;
 *display: inline;
 *zoom: 1;
 
+<????????????? 확인 못함>
+# inline-block bugs about doctype 
+- The following appears to work correctly in:
+quirks mode
+IE7 standards
+IE8 standards
+IE9 standards
+IE9 compatibility mode
+
+- works fine in IE9 standards mode. does not display correctly(as you described) in quirks mode.
+quirks mode:block (incorrect)
+IE7 standards:block (incorrect)
+IE8 standards:inline (correct)
+IE9 standards:inline (correct)
+IE9 compatibility mode:inline (correct)
+
 
 
 
@@ -42,6 +58,7 @@ display: inline-block;
 
 In this case, check the doctype and inline-block elements 
 <왜 닷타입 확인>
+<왜 닷타입 확인>doctype 을 알아야 확신을 할 수 있겠다.
 Changing the doctype worked for IE <왜>
 
 
