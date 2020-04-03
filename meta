@@ -1,0 +1,22 @@
+#### meta ####
+
+# X-UA-Compatible 
+- X-UA-Compatible allows web authors to choose what version of internet explorer the page should be rendered as.
+- options:
+IE=edge:
+Edge mode tells Internet Explorer to display content in highest mode available.
+
+IE=11
+IE=EmeulateIE11
+IE=10
+IE=Emeulate10
+IE=9
+IE=Emeulate9
+.
+.
+.
+
+
+
+## reference ##
+https://stackoverflow.com/questions/6771258/what-does-meta-http-equiv-x-ua-compatible-content-ie-edge-do
