@@ -1,18 +1,30 @@
-# selector hack
-- *
+## selector hack
+- *, _:-ms-fullscreen, :root, _:-ms-lang(x)
 
 # *
 - selector hack
 - *선택자, *property:value; *div{};- IE7 hack
 
+# _:-ms-fullscreen, :root selector{}
+- selector hack
+- IE11 and over
+- _:-ms-fullscreen, :root .className{}
 
-# attribute hack
--\9, *
+# _:-ms-lang(x), selector{}
+- selector hack
+- IE10 and over
+
+
+## attribute hack
+-\9, *,  
+
+
 
 # \9
 - attribute hack
 - IE8 and under hack, IE6, IE7, IE8
 - property:value\9; 
+- IE11, 
 
 
 # @media Rule
@@ -50,16 +62,6 @@ IE7 standards:block (incorrect)
 IE8 standards:inline (correct)
 IE9 standards:inline (correct)
 IE9 compatibility mode:inline (correct)
-
-
-
-
-
-
-In this case, check the doctype and inline-block elements 
-<왜 닷타입 확인>
-<왜 닷타입 확인>doctype 을 알아야 확신을 할 수 있겠다.
-Changing the doctype worked for IE <왜>
 
 
 
@@ -184,6 +186,9 @@ IE : 01.0
 - IE8 and over 
 - IE8 dose not support outline-offset.
 - IE9, IE10, IE11, Edge12-14 : Also supports the value of invert for outline-color. Dose not support outline-offset
+
+## reference
+https://m.blog.naver.com/PostView.nhn?blogId=rusdiary&logNo=220974948030&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F
 
 
 
