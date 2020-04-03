@@ -5,8 +5,8 @@
 
 # mediaquery hack
 - \0 : IE8, IE9, IE10
-@media all\0{}
-@media \0screen{} :
+@media all\0{} : 안됨
+
 
 - \9 : IE6, IE7
 
@@ -17,8 +17,14 @@
  *::-,s-backdrop, .foo{color:red} /* IE11 */
 }
 
+- IE10 and over
 @media all and (-ms-heigh-contrast:none), (-ms-high-contrast:active){}
 
+- IE9 and over
+@media screen and (min-width:0\0) and (min-resolution: +72dpi){} : 이렇게 안해도 잘 나옴
+
+- IE8
+@media \0screen{}
 
 - To target Edge Browser
 @supports (-ms-accelerator:true){}
