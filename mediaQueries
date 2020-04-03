@@ -1,11 +1,48 @@
 ## Media Queries
 
-0401 add
-- mediaquery hack
+# cross browsing
+- 
+
+# mediaquery hack
+- \0 : IE8, IE9, IE10
 @media all\0{}
 @media \0screen{} :
 
+- \9 : IE6, IE7
 
+# filter
+
+@media all and (-ms-heigh-contrast:none){
+  .foo{color:green} /* IE10 */
+ *::-,s-backdrop, .foo{color:red} /* IE11 */
+}
+
+@media all and (-ms-heigh-contrast:none), (-ms-high-contrast:active){}
+
+
+- To target Edge Browser
+@supports (-ms-accelerator:true){}
+
+# meta tag
+- only for IE9
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+<!--[if IE]>
+	This content is ignored in IE10 and other browsers.
+	In older versions of IE it renders as part of the page.
+<![endif]-->	
+
+-
+<!--[if lt IE 7] <html class="ie6"> <![endif]-->
+<!--[if IE 7] <html class="ie7"> <![endif]-->
+<!--[if IE 8] <html class="ie8"> <![endif]-->
+<!--[if IE 9] <html class="ie9"> <![endif]-->
+<!--[if (gt IE 11)|(IE)]><!--> <html class="ie9"> <!--<![endif]-->
+<script>
+if(document.documentMode === 10){
+	document.documentElement.className+=' ie10';
+}else if(document.documentMode ===11){
+	document.documentElement.className+=' ie11';
+}
 
 # support
 - over IE9
@@ -23,11 +60,10 @@ print, screen... in HTML4
 - speech : used for screenreaders that "reads" the page out outd
 
 # syntax
-- @media not|only mediatype and (mediafeature and |or|not mediafeature){}
+- @media not|only mediatype and (mediafeature and|or|not mediafeature){}
 not: reverts the meaning of an entire media query.
 only: prevents older browsers that do not support media queries with media feature from applying the specified styles. It has no effect on modern browsers.
 and: combines a media feature width a media type or other media features.
-
 
 - the comma expresses a logical OR, while the 'and' keyword expresses a logical AND.
 <link rel="stylesheet" media="screen and (color)" href="example.css" />
@@ -36,13 +72,16 @@ and: combines a media feature width a media type or other media features.
 <link rel="stylesheet" media="only screen and (color)" href="example.css" />
 
 # The media queries syntax can be used with HTML, XHTML, XML and the @import and @media rules of CSS. 
-<link rel="stylesheet" media="screen and (color), projection and (color)" rel="stylesheet" href="example.css">
-<link rel="stylesheet" media="screen and (color), projection and (color)" rel="stylesheet" href="example.css" />
+<link rel="stylesheet" media="screen and (color), projection and (color)" href="example.css">
+<link rel="stylesheet" media="screen and (color), projection and (color)" href="example.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="sans-serif.css">
+<link rel="stylesheet" type="text/css" media="print" href="serif.css">
 <?xml-stylesheet media="screen and (color), projection and (color)" rel="stylesheet" href="example.css" ?>
 @import url(example.css) screen and (color), projection and (color);
 @media screen and (color), jection and (color){...}
 
-
+- Inside a CSS style sheet
+@media screen{*font-family: sans-serif;}
 
 # IE identical syntax
 @media all and (min-width:500px){}
@@ -95,29 +134,15 @@ and: combines a media feature width a media type or other media features.
 - The 'scan' media feature describes the scanning process of 'tv' output devices.
 @media tv and (scan:progressive) {}
 
-
-# values
-- ratio : positive integer, optional whitespace
-- resolution : positive number
-
-# units
-
 # resolution
 - dpi, dots per CSS 'inch'
 - dpcm, dots per CSS 'centimeter'
+- value : positive number
+
+# ratio
+- value : positive integer, optional whitespace
 
 
-
-
-
-
-
-# background
-<link rel="stylesheet" type="text/css" media="screen" href="sans-serif.css">
-<link rel="stylesheet" type="text/css" media="print" href="serif.css">
-
-Inside a CSS style sheet
-@media screen{*font-family: sans-serif;}
 
 
 ## reference
@@ -125,3 +150,4 @@ https://www.w3.org/TR/css3-mediaqueries/
 https://www.w3schools.com/cssref/css3_pr_mediaquery.asp
 https://aboooks.tistory.com/400
 https://blog.caplin.com/2013/06/07/developing-for-ie8-inline-block-resize-bug/
+https://stackoverflow.com/questions/20541306/how-to-write-a-css-hack-for-ie-11
