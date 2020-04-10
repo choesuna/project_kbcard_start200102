@@ -1,3 +1,8 @@
 # : vs ::
+- pseudo-element
 - double colon is css3 syntax
 - IE8 only supports the single-colon
+- IE8 dosen't support z-index on them
+
+# :active
+- pseudo selector
